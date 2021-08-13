@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "enterMountain",
+    "texture": "9db020b0-0773-49b0-8014-acd0257db41c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      340,
+      171
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      341,
+      171
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

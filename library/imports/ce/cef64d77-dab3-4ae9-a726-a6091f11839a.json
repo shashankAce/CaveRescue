@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "uxpeLmxE55CSn",
+    "texture": "b1653648-6c97-4089-8320-aef21b812b7c",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      37,
+      25
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      37,
+      27
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

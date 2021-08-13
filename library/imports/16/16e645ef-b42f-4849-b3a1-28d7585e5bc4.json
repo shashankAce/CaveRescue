@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "MhRt60vRP5FLW",
+    "texture": "a4985dbe-718f-433b-97bf-fa56809d41d7",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      39,
+      46
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      39,
+      46
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

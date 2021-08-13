@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "a9RSolfysoEZm",
+    "texture": "913309e6-a48f-48c9-93ba-67daa5cfd1f1",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      7,
+      3
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      8,
+      3
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

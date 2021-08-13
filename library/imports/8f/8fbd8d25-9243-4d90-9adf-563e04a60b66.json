@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ship3",
+    "texture": "c5074d0d-2a1d-4d8f-85d7-fd185a305be4",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      32,
+      27
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      32,
+      28
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

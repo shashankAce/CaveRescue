@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "rock11",
+    "texture": "41280040-a421-4410-b3ab-d11e1124539d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      89,
+      131
+    ],
+    "offset": [
+      -2,
+      0
+    ],
+    "originalSize": [
+      93,
+      131
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

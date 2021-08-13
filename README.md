@@ -1,2 +1,2 @@
-# CaveRescue
-Simple cave 2d game
+# hello-world
+Hello world new project template.

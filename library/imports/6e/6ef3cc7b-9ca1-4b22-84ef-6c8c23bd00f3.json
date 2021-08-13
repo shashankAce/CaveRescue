@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mount",
+    "texture": "5be4fdf8-26b6-42e4-b8fe-b0d6376a676e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      191,
+      42
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      191,
+      42
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
