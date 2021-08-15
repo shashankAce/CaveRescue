@@ -1,6 +1,6 @@
 
 (function () {
-var scripts = [{"deps":{"./assets/Script/Menu":1,"./assets/Script/Jet":3,"./assets/migration/use_v2.1-2.2.1_cc.Toggle_event":2,"./assets/Script/Game":4},"path":"preview-scripts/__qc_index__.js"},{"deps":{},"path":"preview-scripts/assets/Script/Menu.js"},{"deps":{},"path":"preview-scripts/assets/migration/use_v2.1-2.2.1_cc.Toggle_event.js"},{"deps":{},"path":"preview-scripts/assets/Script/Jet.js"},{"deps":{},"path":"preview-scripts/assets/Script/Game.js"}];
+var scripts = [{"deps":{"./assets/Script/Menu":4,"./assets/Script/camera_control":3,"./assets/Script/Jet":2,"./assets/migration/use_v2.1-2.2.1_cc.Toggle_event":1,"./assets/Script/Game":5},"path":"preview-scripts/__qc_index__.js"},{"deps":{},"path":"preview-scripts/assets/migration/use_v2.1-2.2.1_cc.Toggle_event.js"},{"deps":{},"path":"preview-scripts/assets/Script/Jet.js"},{"deps":{},"path":"preview-scripts/assets/Script/camera_control.js"},{"deps":{},"path":"preview-scripts/assets/Script/Menu.js"},{"deps":{},"path":"preview-scripts/assets/Script/Game.js"}];
 var entries = ["preview-scripts/__qc_index__.js"];
 var bundleScript = 'preview-scripts/__qc_bundle__.js';
 

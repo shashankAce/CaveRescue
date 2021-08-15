@@ -24,25 +24,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var Helloworld = /** @class */ (function (_super) {
-    __extends(Helloworld, _super);
-    function Helloworld() {
+var Menu = /** @class */ (function (_super) {
+    __extends(Menu, _super);
+    function Menu() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    // @property(cc.Label)
-    // label: cc.Label = null;
-    // @property
-    // text: string = 'hello';
-    Helloworld.prototype.start = function () {
+    Menu.prototype.start = function () {
         // init logic
         // this.label.string = this.text;
+        cc.director.getPhysicsManager().enabledAccumulator = true;
+        // Physics timestep, default FIXED_TIME_STEP is 1/60
+        cc.PhysicsManager.FIXED_TIME_STEP = 1 / 60;
+        // The number of iterations per update of the Physics System processing speed is 10 by default
+        cc.PhysicsManager.VELOCITY_ITERATIONS = 8;
+        // The number of iterations per update of the Physics processing location is 10 by default
+        cc.PhysicsManager.POSITION_ITERATIONS = 8;
+        // cc.game.setFrameRate(61);
         cc.director.loadScene('Game');
     };
-    Helloworld = __decorate([
+    Menu = __decorate([
         ccclass
-    ], Helloworld);
-    return Helloworld;
+    ], Menu);
+    return Menu;
 }(cc.Component));
-exports.default = Helloworld;
+exports.default = Menu;
 
 cc._RF.pop();

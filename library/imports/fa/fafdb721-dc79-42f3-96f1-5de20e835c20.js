@@ -24,27 +24,59 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var NewClass = /** @class */ (function (_super) {
-    __extends(NewClass, _super);
-    function NewClass() {
+var Game = /** @class */ (function (_super) {
+    __extends(Game, _super);
+    function Game() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.gravity = -300;
+        _this.wall = null;
+        _this.gameSize = cc.v2(640, 960);
+        _this.map = null;
+        _this.jet = null;
         return _this;
         // update (dt) {}
     }
-    NewClass.prototype.onLoad = function () {
+    Game.prototype.onLoad = function () {
         var physics_manager = cc.director.getPhysicsManager();
         physics_manager.enabled = true;
         physics_manager.debugDrawFlags = 1;
         physics_manager.gravity = cc.v2(0, this.gravity);
+        this.wall = this.map.getLayers()[0];
     };
-    NewClass.prototype.start = function () {
+    Game.prototype.start = function () {
+        var mapSize = this.map.getMapSize();
+        var tileSize = this.map.getTileSize();
+        var x = -(mapSize.width * tileSize.width) / 2 + tileSize.width / 2;
+        var y = (mapSize.height * tileSize.height) / 2 - tileSize.height / 2;
+        var offset = cc.v2(x, y);
+        for (var i = 0; i < mapSize.width; i++) {
+            for (var j = 0; j < mapSize.height; j++) {
+                var n = this.wall.getTileGIDAt(i, j);
+                // If tiles are present
+                if (n != 0) {
+                    var x_1 = offset.x + i * tileSize.width;
+                    var y_1 = offset.y - j * tileSize.height;
+                    // Add collision box
+                    var collider = this.wall.node.addComponent(cc.PhysicsBoxCollider);
+                    collider.offset.set(cc.v2(x_1, y_1));
+                    collider.size.width = tileSize.width;
+                    collider.size.height = tileSize.height;
+                    collider.apply();
+                }
+            }
+        }
     };
-    NewClass = __decorate([
+    __decorate([
+        property(cc.TiledMap)
+    ], Game.prototype, "map", void 0);
+    __decorate([
+        property(cc.RigidBody)
+    ], Game.prototype, "jet", void 0);
+    Game = __decorate([
         ccclass
-    ], NewClass);
-    return NewClass;
+    ], Game);
+    return Game;
 }(cc.Component));
-exports.default = NewClass;
+exports.default = Game;
 
 cc._RF.pop();

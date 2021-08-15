@@ -2,15 +2,15 @@
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class Jet extends cc.Component {
 
     rigidBody: cc.RigidBody;
 
-    force: number = 2000;
+    force: number = 500;
     upforce: number = 2000;
 
-    velocityMax: number = 300;
-    upVelocityMax: number = 200;
+    horizontalVmax: number = 300;
+    verticalVmax: number = 200;
 
     direction: number = 0;
     key: { up: boolean, right: boolean, left: boolean } = { up: false, right: false, left: false };
@@ -72,21 +72,21 @@ export default class NewClass extends cc.Component {
 
     update(dt) {
 
-        if (this.key.left && this.rigidBody.linearVelocity.x > -this.velocityMax) {
+        if (this.key.left && this.rigidBody.linearVelocity.x > -this.horizontalVmax) {
             this.rigidBody.applyForceToCenter(new cc.Vec2(-1 * this.force, 0), true);
 
             // console.log(this.rigidBody.linearVelocity.x);
 
         }
 
-        if (this.key.right && this.rigidBody.linearVelocity.x < this.velocityMax) {
+        if (this.key.right && this.rigidBody.linearVelocity.x < this.horizontalVmax) {
             this.rigidBody.applyForceToCenter(new cc.Vec2(1 * this.force, 0), true);
 
             // console.log(this.rigidBody.linearVelocity.x);
 
         }
 
-        if (this.key.up && this.rigidBody.linearVelocity.y < this.upVelocityMax) {
+        if (this.key.up && this.rigidBody.linearVelocity.y < this.verticalVmax) {
             this.rigidBody.applyForceToCenter(new cc.Vec2(0, this.upforce), true);
         }
 

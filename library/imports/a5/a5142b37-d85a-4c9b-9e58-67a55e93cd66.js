@@ -24,24 +24,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var NewClass = /** @class */ (function (_super) {
-    __extends(NewClass, _super);
-    function NewClass() {
+var Jet = /** @class */ (function (_super) {
+    __extends(Jet, _super);
+    function Jet() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.force = 2000;
+        _this.force = 500;
         _this.upforce = 2000;
-        _this.velocityMax = 300;
-        _this.upVelocityMax = 200;
+        _this.horizontalVmax = 300;
+        _this.verticalVmax = 200;
         _this.direction = 0;
         _this.key = { up: false, right: false, left: false };
         return _this;
     }
-    NewClass.prototype.onLoad = function () {
+    Jet.prototype.onLoad = function () {
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
         this.rigidBody = this.getComponent(cc.RigidBody);
     };
-    NewClass.prototype.onKeyDown = function (event) {
+    Jet.prototype.onKeyDown = function (event) {
         switch (event.keyCode) {
             case cc.macro.KEY.up:
                 this.key.up = true;
@@ -56,7 +56,7 @@ var NewClass = /** @class */ (function (_super) {
                 break;
         }
     };
-    NewClass.prototype.onKeyUp = function (event) {
+    Jet.prototype.onKeyUp = function (event) {
         switch (event.keyCode) {
             case cc.macro.KEY.up:
                 this.key.up = false;
@@ -71,38 +71,38 @@ var NewClass = /** @class */ (function (_super) {
                 break;
         }
     };
-    NewClass.prototype.changeShipAngle = function (angle) {
+    Jet.prototype.changeShipAngle = function (angle) {
         cc.tween(this.node)
             .to(0.2, { angle: angle })
             .start();
     };
-    NewClass.prototype.start = function () {
+    Jet.prototype.start = function () {
         this.rigidBody.fixedRotation = true;
         // this.rigidBody.enabledContactListener = true;
     };
-    NewClass.prototype.update = function (dt) {
-        if (this.key.left && this.rigidBody.linearVelocity.x > -this.velocityMax) {
+    Jet.prototype.update = function (dt) {
+        if (this.key.left && this.rigidBody.linearVelocity.x > -this.horizontalVmax) {
             this.rigidBody.applyForceToCenter(new cc.Vec2(-1 * this.force, 0), true);
             // console.log(this.rigidBody.linearVelocity.x);
         }
-        if (this.key.right && this.rigidBody.linearVelocity.x < this.velocityMax) {
+        if (this.key.right && this.rigidBody.linearVelocity.x < this.horizontalVmax) {
             this.rigidBody.applyForceToCenter(new cc.Vec2(1 * this.force, 0), true);
             // console.log(this.rigidBody.linearVelocity.x);
         }
-        if (this.key.up && this.rigidBody.linearVelocity.y < this.upVelocityMax) {
+        if (this.key.up && this.rigidBody.linearVelocity.y < this.verticalVmax) {
             this.rigidBody.applyForceToCenter(new cc.Vec2(0, this.upforce), true);
         }
     };
-    NewClass.prototype.onDestroy = function () {
+    Jet.prototype.onDestroy = function () {
         // Cancel keyboard input monitoring
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     };
-    NewClass = __decorate([
+    Jet = __decorate([
         ccclass
-    ], NewClass);
-    return NewClass;
+    ], Jet);
+    return Jet;
 }(cc.Component));
-exports.default = NewClass;
+exports.default = Jet;
 
 cc._RF.pop();
